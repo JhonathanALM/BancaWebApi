@@ -33,7 +33,55 @@ Verify the deployment by navigating to your server address in
 your preferred browser.
 
 ```sh
-127.0.0.1:8080
+127.0.0.1:8000
+```
+## Ejemplo Respuesta
+```sh
+{
+    "data": [
+        {
+            "fecha": "2022-09-03T20:13:32.3796372",
+            "cliente": "JOSE LEMA",
+            "numeroCuenta": "478758",
+            "tipo": "CRED",
+            "saldoInicial": 2000.00,
+            "estado": "A",
+            "movimiento": 78.00,
+            "saldoDisponible": 2078.00
+        },
+        {
+            "fecha": "2022-09-03T20:13:41.2636261",
+            "cliente": "JOSE LEMA",
+            "numeroCuenta": "478758",
+            "tipo": "CRED",
+            "saldoInicial": 2078.00,
+            "estado": "A",
+            "movimiento": 90.00,
+            "saldoDisponible": 2168.00
+        },
+        {
+            "fecha": "2022-09-03T20:13:44.4489936",
+            "cliente": "JOSE LEMA",
+            "numeroCuenta": "478758",
+            "tipo": "CRED",
+            "saldoInicial": 2168.00,
+            "estado": "A",
+            "movimiento": 30.00,
+            "saldoDisponible": 2198.00
+        },
+        {
+            "fecha": "2022-09-03T20:13:49.5815594",
+            "cliente": "JOSE LEMA",
+            "numeroCuenta": "478758",
+            "tipo": "DEV",
+            "saldoInicial": 2198.00,
+            "estado": "A",
+            "movimiento": -60.00,
+            "saldoDisponible": 2138.00
+        }
+    ],
+    "respuesta": "Created"
+}
 ```
 ## Plugins
 
