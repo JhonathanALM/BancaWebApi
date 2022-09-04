@@ -17,14 +17,19 @@ Es necesesario tener instalado Docker, NetCore 6.
 
 Pasos para ejecutar el aplicativo:
 
-Instalacion de la base de datos
+_Instalacion de la base de datos_
 ```sh
 $ docker pull mcr.microsoft.com/mssql/server:2019-latest
 $ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=2Secure*Password2" -p 1450:1433 --name sqlserverdb -h mysqlserver -d mcr.microsoft.com/mssql/server:2019-latest
 ```
-
-Ejecucion del aplicativo mediante Docker
-
+_Migracion de EF_
+Es necesario primero la actualizacion de la base de datos utilizando los comandos EF, para ello se necesita estar en la carpeta de AccesoDatos
+```sh
+Add-Migration InitialCreate -o Migrations
+update-Database
+```
+_Ejecucion del aplicativo mediante Docker (Opcional)_
+En el directorio del dockerfile (raiz)
 ```sh
 $ docker build -t jalechon/bancawebapi .
 $ docker run -d -p  80:8080 jalechon/bancawebapi
@@ -33,7 +38,7 @@ Verify the deployment by navigating to your server address in
 your preferred browser.
 
 ```sh
-127.0.0.1:8000
+127.0.0.1:8080
 ```
 ## Ejemplo Respuesta
 ```sh
